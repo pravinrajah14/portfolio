@@ -1,1 +1,1 @@
-##Portfolio available at: [Link]([url](https://pravinrajah.netlify.app/))
+## Portfolio available at: [pravinrajah.netlify.app](https://pravinrajah.netlify.app/)
