@@ -1,7 +1,7 @@
 export type Exp = {
   org: string; title: string; location: string; start: string; end: string; bullets: string[];
 };
-export type Proj = { name: string; bullets: string[] };
+export type Proj = { name: string; bullets: string[]; link: string; tools: string[] };
 
 export const profile = {
   name: "Pravin Rajah",
