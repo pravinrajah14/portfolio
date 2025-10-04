@@ -7,7 +7,7 @@ export default function Nav() {
     { href: "#contact", label: "Contact" },
   ];
   return (
-    <header className="sticky top-0 z-10 backdrop-blur bg-[#0b0f1a]/70 border-b border-white/5">
+    <header className="sticky top-0 z-50 bg-[#0b0f1a] border-b border-white/10 shadow-lg">
       <div className="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
         <a href="#" className="font-semibold tracking-tight">Portfolio</a>
         <nav className="hidden sm:flex gap-5 text-sm text-[#9aa4b2]">
