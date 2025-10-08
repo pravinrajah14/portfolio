@@ -17,7 +17,7 @@ export const profile = {
     school: "University of California, Berkeley",
     degree: "B.S. in Electrical Engineering and Computer Science",
     gpa: "3.75",
-    gradDate: "May. 2027",
+    gradDate: "May. 2028",
     awards: ["Eta Kappa Nu (HKN) – EECS Honor Society"],
     organizations: ["IEEE"],
   },
