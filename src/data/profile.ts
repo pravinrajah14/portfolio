@@ -108,9 +108,31 @@ export const profile = {
         "Cross-validated cycles and DRAM traffic against Timeloop's mapping search, hitting an exact traffic match.",
         "Cut real-GPU step-latency error from 500% to 7% via calibrated compute-efficiency and overhead corrections.",
       ],
-      link: "",
+      link: "https://github.com/pravinrajah14/accel-sim",
       tools: ["Python", "PyTorch", "CUDA"],
       preview: "systolic",
+    },
+    {
+      name: "Roadside Vehicle Headway Estimation",
+      bullets: [
+        "Estimates following distance and per-vehicle speed from a single fixed traffic camera using YOLO11 detection, ByteTrack, and a ground-plane homography, with Depth Anything V2 as an occlusion signal.",
+        "Validated on two independently calibrated NGSIM cameras against real ground truth on held-out footage the calibration never saw (speed MAE 3.6 and 4.7 m/s).",
+        "Documented negative results in full, including a fine-tuning experiment that exposed a bias in the auto-labeling process; 63 offline unit tests.",
+      ],
+      link: "https://github.com/pravinrajah14/cv-project",
+      tools: ["Python", "PyTorch", "OpenCV", "YOLO"],
+      preview: "road",
+    },
+    {
+      name: "Calibrated Router for Mixture-of-Experts",
+      bullets: [
+        "Built a toy Mixture-of-Experts model whose router is a calibrated typed-decision gate with an explicit \"unsure\" option and post-hoc temperature scaling, instead of a standard linear-softmax gate.",
+        "Compared four router configurations under soft and hard top-k mixing, measuring accuracy, expert purity, and ECE; decoupling the gate recovered standard-gate accuracy while keeping calibrated confidence.",
+        "Reproducible end to end from configs, with 35 tests covering gradient flow, temperature invariance, and load-balancing loss bounds.",
+      ],
+      link: "https://github.com/pravinrajah14/jev-exploration",
+      tools: ["Python", "PyTorch"],
+      preview: "router",
     },
     {
       name: "PintOS Operating System",

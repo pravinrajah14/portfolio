@@ -1,4 +1,45 @@
-export type PreviewVariant = "systolic" | "kernel" | "candles" | "nodes";
+export type PreviewVariant = "systolic" | "kernel" | "candles" | "nodes" | "road" | "router";
+
+function Road() {
+  return (
+    <svg viewBox="0 0 400 160" className="w-full h-full">
+      {[0, 1, 2, 3].map((i) => (
+        <line
+          key={i}
+          x1={200 + (i - 1.5) * 20}
+          y1="14"
+          x2={200 + (i - 1.5) * 110}
+          y2="150"
+          stroke="#000"
+          strokeOpacity="0.35"
+          strokeDasharray={i === 0 || i === 3 ? undefined : "4 5"}
+        />
+      ))}
+      <rect x="168" y="38" width="20" height="14" fill="none" stroke="#000" strokeOpacity="0.55" />
+      <rect x="205" y="70" width="34" height="22" fill="none" stroke="#000" strokeOpacity="0.55" />
+      <rect x="140" y="104" width="52" height="34" fill="none" stroke="#000" strokeOpacity="0.7" />
+      <line x1="215" y1="92" x2="215" y2="52" stroke="#000" strokeOpacity="0.6" strokeDasharray="2 3" />
+    </svg>
+  );
+}
+
+function Router() {
+  const experts = [24, 52, 80, 108, 136];
+  const weights = [0.15, 0.6, 0.3, 0.7, 0.2];
+  return (
+    <svg viewBox="0 0 400 160" className="w-full h-full">
+      <circle cx="40" cy="80" r="8" fill="none" stroke="#000" strokeOpacity="0.7" />
+      <rect x="90" y="66" width="36" height="28" fill="none" stroke="#000" strokeOpacity="0.7" />
+      {experts.map((y, i) => (
+        <g key={y}>
+          <line x1="126" y1="80" x2="260" y2={y} stroke="#000" strokeOpacity={weights[i]} />
+          <rect x="260" y={y - 10} width="70" height="20" fill="none" stroke="#000" strokeOpacity="0.5" />
+        </g>
+      ))}
+      <line x1="48" y1="80" x2="90" y2="80" stroke="#000" strokeOpacity="0.5" />
+    </svg>
+  );
+}
 
 function Systolic() {
   const cols = 8;
@@ -131,7 +172,7 @@ function Nodes() {
 }
 
 export default function ProjectPreview({ variant }: { variant: PreviewVariant }) {
-  const Comp = { systolic: Systolic, kernel: Kernel, candles: Candles, nodes: Nodes }[variant];
+  const Comp = { systolic: Systolic, kernel: Kernel, candles: Candles, nodes: Nodes, road: Road, router: Router }[variant];
   return (
     <div className="relative w-full aspect-[5/2] rounded-t-lg border-b border-black/10 bg-black/[0.02] overflow-hidden">
       <Comp />
